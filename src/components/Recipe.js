@@ -5,7 +5,8 @@ const Recipe = ({ recipes, completeTodo }) => {
   const [edit, setEdit] = useState({
     id: null,
     valueName: '',
-    valueInstruction: ''
+    valueInstruction: '',
+    
   });
 
   const submitUpdate = value => {
@@ -19,17 +20,18 @@ const Recipe = ({ recipes, completeTodo }) => {
     return <Input edit={edit} onSubmit={submitUpdate} />;
   }
   if (recipes.length === 0){
-    return <p>There are no recipes to list.</p>
+    return <p>There are no recipes to list</p>
   } else{  return recipes.map((recipe, index) => (
+      
     <div
       className={recipe.isComplete ? 'todo-row complete' : 'todo-row'}
       key={index}
     >
-      <div key={recipe.id} onClick={() => completeTodo(recipe.id)}>
+      <li key={recipe.id} onClick={() => completeTodo(recipe.id)}>
 
-        {recipe.textName} {recipe.textInstructions}
+        {recipe.textName}
 
-      </div>
+      </li>
  
     </div>
   ));}

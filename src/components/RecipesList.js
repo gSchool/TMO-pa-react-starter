@@ -43,11 +43,14 @@ function RecipesList() {
     <div>
     {/* <Input onSubmit={submitRecipe}/> */}
         {/* {clicked ? (<Input onSubmit={submitRecipe}/>): (<button onClick={onClick}> Add Recipe </button> )} */}
-        
+        <ul>
+         
         <Recipe
             recipes={recipes}
             completerecipe={completerecipe}
         />
+        
+        </ul>
         {clicked ? (<Input onSubmit={submitRecipe}/>): (<button onClick={onClick}> Add Recipe </button> )}
 
 

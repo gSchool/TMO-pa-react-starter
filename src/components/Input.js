@@ -45,27 +45,27 @@ function Input(props){
         return(
             <>
             <div>
-            <form onSubmit={handleSubmit} className="addForm">
-              <fieldset>
-                <label htmlFor="recipe-name">
-                  <p>recipe-name</p>
-                  <input 
-                    ref={inputNameRef}
-                    type="text" 
-                    value={inputName} 
-                    onChange={handleNameChange}
-                    
+            <form role="textbox" onSubmit={handleSubmit} className="addForm">
+                {/* <label id="recipe-name"
+                 role="textbox">recipe-name</label> */}
+                <input className="recipe-name"
+                id="recipe-name"
+                aria-label="recipe-name"
+                ref={inputNameRef}
+                type="text" 
+                value={inputName} 
+                onChange={handleNameChange}
                     />
-                </label>
-                <label htmlFor="recipe-instructions">
-                  <p>recipe-instructions</p>
-                  <input 
-                    type="text" 
-                    value={inputInstructions} 
-                    onChange={handleInstructionsChange}
-                    />
-                </label>
-              </fieldset>
+                {/* <label role="textbox"
+                 id="recipe-instructions">recipe-instructions</label>   */}
+                <input  className="recipe-instructions"
+                id="recipe-instructions"
+                aria-label="recipe-instructions"
+                type="text" 
+                value={inputInstructions} 
+                onChange={handleInstructionsChange}
+                />
+          
               <button onClick={handleSubmit}>Submit</button>
             </form>
             </div>
