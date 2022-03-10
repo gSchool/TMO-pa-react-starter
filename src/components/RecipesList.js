@@ -9,18 +9,22 @@ function RecipesList() {
   const onClick = () => setClicked(clicked => !clicked)
 
   const submitRecipe = recipe => {
-    recipe.preventDefault();
-    // console.log(...recipes);
+
+    console.log(recipe.textName);
 
     // if (!recipe.text || /^\s*$/.test(recipe.text)) {
     //   return;
     // }
     console.log("string",recipes);
 
-    const newRecipes = [recipe, recipes];
+    // const newRecipes = [0,1,2,3];
+    const newRecipes = [recipe, ...recipes];
+
 
     setRecipes(newRecipes);
     console.log("newRecipe",recipes);
+    console.log("trying",...recipes);
+
   };
 
 
@@ -37,12 +41,16 @@ function RecipesList() {
   return (
     <>
     <div>
- 
-        {clicked ? (<Input onSubmit={submitRecipe("a")}/>): (<button onClick={onClick}> Add Recipe </button> )}
+    {/* <Input onSubmit={submitRecipe}/> */}
+        {/* {clicked ? (<Input onSubmit={submitRecipe}/>): (<button onClick={onClick}> Add Recipe </button> )} */}
+        
         <Recipe
             recipes={recipes}
             completerecipe={completerecipe}
         />
+        {clicked ? (<Input onSubmit={submitRecipe}/>): (<button onClick={onClick}> Add Recipe </button> )}
+
+
     </div>
 
     </>

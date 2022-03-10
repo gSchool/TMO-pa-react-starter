@@ -25,15 +25,7 @@ function App() {
       {/* ^ Do not remove this element ^ */}
       <h1 className="myRecipesHeader">My Recipes</h1>
 
-      <div>
-        <p>There are no recipes to list.</p>
-          {/* if (addClicked === 0 ){
-          
-        } */}
-          {/* <p>You clicked {addClicked} times</p> */}
-          {/* <button onClick={() =>setAddClicked(addClicked+1)}>Add Recipe</button> */}
-
-      </div>
+    
 
       <RecipesList />
 

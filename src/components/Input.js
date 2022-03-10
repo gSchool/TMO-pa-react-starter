@@ -1,5 +1,6 @@
 import { render } from '@testing-library/react';
 import React, { useState, useEffect, useRef } from 'react';
+import RecipesList from './RecipesList';
 
 
 function Input(props){
@@ -7,11 +8,12 @@ function Input(props){
   const [inputInstructions, setInstructions] = useState(props.edit ? props.edit.value : '');
 
   const inputNameRef = useRef(inputName);
+  
   const inputInstructionsRef = useRef(inputName);
 
   // useEffect(() => {
-  //   inputNameRef.current.focus();
-  //   inputInstructionsRef.current.focus();
+  //   inputNameRef.current.value = inputName;
+  //   // inputInstructionsRef.current.focus();
   // });
 
   const handleNameChange = e => {
@@ -31,6 +33,9 @@ function Input(props){
       textInstructions: inputInstructions
     });
     console.log("hereNae2" ,inputName, e);
+    console.log("HELLLO", inputNameRef.current.value);
+    setName([...inputName]);
+
     setName('');
     setInstructions('');
  
@@ -45,10 +50,11 @@ function Input(props){
                 <label htmlFor="recipe-name">
                   <p>recipe-name</p>
                   <input 
+                    ref={inputNameRef}
                     type="text" 
                     value={inputName} 
                     onChange={handleNameChange}
-                    ref={inputNameRef}
+                    
                     />
                 </label>
                 <label htmlFor="recipe-instructions">
@@ -63,10 +69,7 @@ function Input(props){
               <button onClick={handleSubmit}>Submit</button>
             </form>
             </div>
-            <div>
-              <p>{inputName}</p>
-
-            </div>
+            
             </>
         );
     // }
